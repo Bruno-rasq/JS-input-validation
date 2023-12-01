@@ -1,12 +1,20 @@
-const form = document.querySelector("#formInput");
+const form = document.querySelector("#form");
 const btn_submit = form.querySelector('#submit-btn');
 
 // data
-let Input_Name = document.querySelector('#username');
-let Input_Email = document.querySelector('#userEmail');
-let Input_password = document.querySelector('#userPassword');
+let Input_Name = form.querySelector('#username');
+let Input_Email = form.querySelector('#userEmail');
+let Input_password = form.querySelector('#userPassword');
 
 
+
+class User  {
+    constructor(name, email, password){
+        this.name = name,
+        this.email = email,
+        this.password = password
+    }
+}
 
 const validateName = (name) => {
 
@@ -21,7 +29,7 @@ const validateEmail = (email) => {
     const emailREGEX = new RegExp(
 
         //exm: teste@gmail.com
-        /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$/
+        /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
     );
 
     if(emailREGEX.test(email) === true){
@@ -39,14 +47,6 @@ const validatepassword = (password) => {
     }
 
     return false;
-}
-
-class User  {
-    constructor(name, email, password){
-        this.name = name,
-        this.email = email,
-        this.password = password
-    }
 }
 
 const handleForm = (event) => {
@@ -82,4 +82,16 @@ const handleForm = (event) => {
     // form.submit()
 }
 
+const listenner = () => {
+
+    if(Input_Name.value != '' && Input_Email.value != '' && Input_password.value != ''){
+        btn_submit.removeAttribute('disabled')
+        return
+    }
+
+    btn_submit.setAttribute('disabled', '')
+}
+
+
+window.addEventListener('input', listenner)
 form.addEventListener('submit', handleForm)

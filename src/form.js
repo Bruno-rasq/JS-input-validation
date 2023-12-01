@@ -16,6 +16,14 @@ class User  {
     }
 }
 
+const resetForm = () => {
+
+    Input_Name.value = ''
+    Input_Email.value = ''
+    Input_password.value = ''
+    btn_submit.setAttribute('disabled', '')
+}
+
 const validateName = (name) => {
 
     if(name.length > 5){
@@ -75,14 +83,10 @@ const handleForm = (event) => {
     const newUser = new User(Input_Name.value, Input_Email.value, Input_password.value)
     console.log(newUser)
 
-    Input_Name.value = ''
-    Input_Email.value = ''
-    Input_password.value = ''
-
-    // form.submit()
+    resetForm()
 }
 
-const listenner = () => {
+const enableBtnSubmit = () => {
 
     if(Input_Name.value != '' && Input_Email.value != '' && Input_password.value != ''){
         btn_submit.removeAttribute('disabled')
@@ -93,5 +97,6 @@ const listenner = () => {
 }
 
 
-window.addEventListener('input', listenner)
+
+window.addEventListener('input', enableBtnSubmit)
 form.addEventListener('submit', handleForm)

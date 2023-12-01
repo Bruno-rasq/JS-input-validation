@@ -6,33 +6,33 @@
     <title>javascript validation</title>
 
     <script src="/src/form.js" defer></script>
+    <link rel="stylesheet" href="/src/form.css">
+
 </head>
 <body>
     
-    <main>
-        <section>
-            <h1>Bem-vindo!</h1>
-        </section>
+    <form id="form" action="">
 
-        <form id="form" action="">
+        <div class="form-header">
+            <h1>Bem vindo!</h1>
+            <p>complete seu cadastro para ter acesso.</p>
+        </div>
 
-            <label for="username">Name:</label>
-            <input type="text" name="username" id="username" placeholder="Digite seu nome." 
-            autocomplete="off">
+        <label for="username">Name:</label>
+        <input type="text" name="username" id="username" placeholder="Digite seu nome." 
+        autocomplete="off" class="inputfield">
 
-            <label for="userEmail">Email-fake:</label>
-            <input type="email" name="email" id="userEmail" placeholder="Insira seu E-mail."
-            autocomplete="off"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$">
+        <label for="userEmail">Email-fake:</label>
+        <input type="email" name="email" id="userEmail" placeholder="Insira seu E-mail."
+        autocomplete="off" class="inputfield">
 
-            <label for="userPassword">Password-fake:</label>
-            <input type="password" name="password" id="userPassword" placeholder="Insira sua senha."
-            autocomplete="off">
+        <label for="userPassword">Password-fake:</label>
+        <input type="password" name="password" id="userPassword" placeholder="Insira sua senha."
+        autocomplete="off" class="inputfield">
 
-            <button type="submit" id="submit-btn" disabled>Confirmar</button>
+        <button type="submit" id="submit-btn" disabled class="submitbtn">Confirmar</button>
 
-        </form>
+    </form>
 
-    </main>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript validation</title>
 
-    <script src="/src/script.js" defer></script>
+    <script src="/src/form.js" defer></script>
 </head>
 <body>
     
@@ -13,23 +13,26 @@
         <section>
             <h1>Bem-vindo!</h1>
         </section>
+
         <form id="formInput">
+
             <label for="username">Name:</label>
-            <input type="text" name="username" id="username" 
-            required placeholder="Digite seu nome." 
+            <input type="text" name="username" id="username" placeholder="Digite seu nome." 
             autocomplete="off">
 
             <label for="userEmail">Email-fake:</label>
-            <input type="email" name="email" id="userEmail" required placeholder="Insira seu E-mail."
+            <input type="email" name="email" id="userEmail" placeholder="Insira seu E-mail."
             autocomplete="off"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$">
 
             <label for="userPassword">Password-fake:</label>
-            <input type="password" name="password" id="userPassword" required placeholder="Insira sua senha."
+            <input type="password" name="password" id="userPassword" placeholder="Insira sua senha."
             autocomplete="off">
 
-            <button type="submit" disabled id="submit-btn">Confirmar</button>
+            <button type="submit" id="submit-btn">Confirmar</button>
+
         </form>
+
     </main>
 </body>
 </html>

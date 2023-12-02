@@ -18,17 +18,26 @@
             <p>complete seu cadastro para ter acesso.</p>
         </div>
 
-        <label for="username">Name:</label>
-        <input type="text" name="username" id="username" placeholder="Digite seu nome." 
-        autocomplete="off" class="inputfield">
+        <div>
+            <label for="username">Nome:</label>
+            <input type="text" id="username" placeholder="Digite seu nome." 
+            autocomplete="off" class="inputfield" pattern=".{3,}">
+            <span data-validation-text>O nome deve conter 3 caracteres ou mais.</span>
+        </div>
 
-        <label for="userEmail">Email-fake:</label>
-        <input type="email" name="email" id="userEmail" placeholder="Insira seu E-mail."
-        autocomplete="off" class="inputfield">
+        <div>
+            <label for="userEmail">Email:</label>
+            <input type="email"  id="userEmail" placeholder="Example: test@test.test"
+            autocomplete="off" class="inputfield">
+            <span data-validation-text>insira um email com formato válido.</span>
+        </div>
 
-        <label for="userPassword">Password-fake:</label>
-        <input type="password" name="password" id="userPassword" placeholder="Insira sua senha."
-        autocomplete="off" class="inputfield">
+        <div>
+            <label for="userPassword">Senha:</label>
+            <input type="password" id="userPassword" placeholder="Insira uma senha falsa."
+            autocomplete="off" class="inputfield" pattern=".{8,}">
+            <span data-validation-text>a senha deve conter 8 caracteres ou mais.</span>
+        </div>
 
         <button type="submit" id="submit-btn" disabled class="submitbtn">Confirmar</button>
 

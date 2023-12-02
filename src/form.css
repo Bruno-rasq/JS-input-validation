@@ -27,6 +27,14 @@ body{
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+#form div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
 }
 
 .form-header{
@@ -40,7 +48,6 @@ body{
 
     height: 40px;
     padding: 10px;
-    margin: 5px 0 20px 0;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -56,7 +63,7 @@ body{
     align-items: center;
     justify-content: center;
 
-    background-color: rgb(157, 241, 48);
+    background-color: #9df130;
     color: white;
     cursor: pointer;
 }
@@ -65,4 +72,19 @@ body{
 
     background-color: rgb(156, 156, 156);
     color: rgb(202, 202, 202);
+}
+
+
+
+.inputfield:invalid:not(:placeholder-shown) {
+	border: 2px solid red !important;
+}
+
+.inputfield:invalid:not(:placeholder-shown) + [data-validation-text] {
+	color: red !important;
+	display: block;
+}
+
+[data-validation-text] {
+	display: none;
 }

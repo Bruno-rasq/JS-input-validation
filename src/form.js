@@ -1,3 +1,4 @@
+
 const form = document.querySelector("#form");
 const btn_submit = form.querySelector('#submit-btn');
 
@@ -26,7 +27,7 @@ const resetForm = () => {
 
 const validateName = (name) => {
 
-    if(name.length > 5){
+    if(name.length >= 2){
         return true
     }
     return false;
@@ -62,13 +63,13 @@ const handleForm = (event) => {
     event.preventDefault()
 
     //validar campo de nome
-    if(Input_Name.value === '' || !validateName(Input_Name.value)){
+    if(!validateName(Input_Name.value)){
         alert('Erro: por favor preencha o campo de nome')
         return;
     }
 
     // validar campo de E-mail
-    if(Input_Email.value === '' || !validateEmail(Input_Email.value)){
+    if(!validateEmail(Input_Email.value)){
         alert('Erro: por favor preencha o campo de E-mail corretamente')
         return;
     }
@@ -88,7 +89,11 @@ const handleForm = (event) => {
 
 const enableBtnSubmit = () => {
 
-    if(Input_Name.value != '' && Input_Email.value != '' && Input_password.value != ''){
+    let name = Input_Name.value != '' ? true : false
+    let email = Input_Email.value != '' ? true : false
+    let password = Input_password.value != '' ? true : false
+
+    if( name && email && password){
         btn_submit.removeAttribute('disabled')
         return
     }
